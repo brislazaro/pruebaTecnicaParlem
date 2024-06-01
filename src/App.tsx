@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Layout from "./components/Layout/Layout";
 import { Outlet } from "react-router-dom";
@@ -10,7 +11,7 @@ function App() {
       <Layout>
         <Outlet />
       </Layout>
-      <footer className="flex items-center h-14 bg-slate-400 px-6"></footer>
+      <Footer />
     </div>
   );
 }
