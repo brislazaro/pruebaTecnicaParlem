@@ -1,24 +1,21 @@
 import { FC } from "react";
-import { CustomerProps } from "../../types";
+import { Customer } from "../../types";
 
-const ClientsCard: FC<CustomerProps> = ({ customer }) => {
+export type ClientCard = {
+  customer: Customer;
+};
+
+const ClientCard: FC<ClientCard> = ({ customer }) => {
   return (
-    <li className="py-3 sm:py-4 " key={customer._id}>
-      <p className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">{`ID:${customer._id}`}</p>
-      <div className="flex-1 min-w-0 ms-4 ">
-        <div className="flex gap-3">
-          <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-            {customer.givenName}
-          </p>
-          <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-            {customer.familyName1}
-          </p>
-        </div>
-        <p className="ext-sm text-gray-500 truncate dark:text-gray-400">
-          {customer.email}
+    <li className="py-4 flex flex-col gap-3 text-white hover:cursor-pointer hover:text-yellow">
+      <p className="text-base font-semibold ">ID: {customer._id}</p>
+      <div>
+        <p className="text-sm font-medium truncate ">
+          {customer.givenName} {customer.familyName1}
         </p>
+        <p className="text-sm truncate text-gray-400">{customer.email}</p>
       </div>
     </li>
   );
 };
-export default ClientsCard;
+export default ClientCard;

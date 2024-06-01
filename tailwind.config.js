@@ -6,6 +6,10 @@ export default {
       minHeight: {
         layout: "calc(100vh - 112px)",
       },
+      colors: {
+        darkgray: "#1f1f1f",
+        yellow: "#fec23e",
+      },
     },
   },
   plugins: [],

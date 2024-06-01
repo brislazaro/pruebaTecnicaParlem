@@ -13,15 +13,14 @@ const ClientsList = () => {
   }
 
   return (
-    <div className="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-      <div className="lex items-center justify-between ">
-        <h1 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
-          Clientes
-        </h1>
-      </div>
-      <ul className="divide-y divide-gray-200 dark:divide-gray-700 ">
+    <div className="w-full p-4 border  rounded-lg shadow md:p-8 bg-darkgray border-gray-700">
+      <h1 className="text-xl font-bold leading-none text-white mb-4">
+        Clientes
+      </h1>
+
+      <ul className="divide-y divide-gray-700 ">
         {data.map((customer) => (
-          <ClientsCard customer={customer} />
+          <ClientsCard customer={customer} key={customer._id} />
         ))}
       </ul>
     </div>
