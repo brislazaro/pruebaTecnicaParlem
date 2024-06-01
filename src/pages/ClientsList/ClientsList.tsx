@@ -1,4 +1,4 @@
-import ClientCard from "./ClientCard";
+import ClientCard from "./ClientCard/ClientCard";
 import useClientsList from "./useClientsList";
 
 const ClientsList = () => {

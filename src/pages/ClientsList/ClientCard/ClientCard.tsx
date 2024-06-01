@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Customer } from "../../types";
+import { Customer } from "../../../types";
 
 export type ClientCard = {
   customer: Customer;
