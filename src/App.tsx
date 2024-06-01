@@ -1,13 +1,12 @@
 import "./App.css";
+import Header from "./components/Header/Header";
 import Layout from "./components/Layout/Layout";
 import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="">
-      <header className="flex items-center h-14 bg-slate-400 px-6">
-        header
-      </header>
+      <Header />
       <Layout>
         <Outlet />
       </Layout>
