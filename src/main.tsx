@@ -4,12 +4,16 @@ import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ClientsList from "./pages/ClientsList/ClientsList.tsx";
+import ClientDetail from "./pages/ClientDetail/ClientDetail.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{ path: "/", element: <ClientsList /> }],
+    children: [
+      { path: "/", element: <ClientsList /> },
+      { path: "/detail/:id", element: <ClientDetail /> },
+    ],
   },
 ]);
 
