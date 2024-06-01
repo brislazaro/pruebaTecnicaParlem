@@ -7,7 +7,10 @@ export type ClientCard = {
 
 const ClientCard: FC<ClientCard> = ({ customer }) => {
   return (
-    <li className="py-4 flex flex-col gap-3 text-white hover:cursor-pointer hover:text-yellow">
+    <li
+      className="py-4 flex flex-col gap-3 text-white hover:cursor-pointer hover:text-yellow"
+      data-testid="clientCard"
+    >
       <p className="text-base font-semibold ">ID: {customer._id}</p>
       <div>
         <p className="text-sm font-medium truncate ">

@@ -6,7 +6,7 @@ const ClientsList = () => {
   const { isLoading, isError, data } = useClientsList();
 
   return (
-    <div className="w-full p-4 border  rounded-lg shadow md:p-8 bg-darkgray border-gray-700">
+    <div className="w-full p-4 border rounded-lg shadow md:p-8 bg-darkgray border-gray-700">
       <h1 className="text-xl font-bold leading-none text-white mb-4">
         Clientes
       </h1>
