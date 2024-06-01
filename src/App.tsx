@@ -1,5 +1,6 @@
 import "./App.css";
 import Layout from "./components/Layout/Layout";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -8,10 +9,7 @@ function App() {
         header
       </header>
       <Layout>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo quos
-        consequatur minus laborum labore, modi voluptatum ipsam porro excepturi,
-        blanditiis eligendi culpa quod eos debitis vero nostrum ullam optio
-        animi.
+        <Outlet />
       </Layout>
       <footer className="flex items-center h-14 bg-slate-400 px-6"></footer>
     </div>
