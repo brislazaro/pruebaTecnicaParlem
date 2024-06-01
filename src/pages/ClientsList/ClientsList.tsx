@@ -1,4 +1,5 @@
 import ClientCard from "./ClientCard/ClientCard";
+import Skeleton from "./Skeleton/Skeleton";
 import useClientsList from "./useClientsList";
 
 const ClientsList = () => {
@@ -10,7 +11,7 @@ const ClientsList = () => {
         Clientes
       </h1>
 
-      {isLoading && !isError && <p>Loading...</p>}
+      {isLoading && !isError && <Skeleton />}
 
       {!isLoading && isError && (
         <div className="p-4 bg-yellow text-lg rounded-md">
@@ -19,7 +20,7 @@ const ClientsList = () => {
       )}
 
       {!isLoading && !isError && (
-        <ul className="divide-y divide-gray-700 ">
+        <ul className="divide-y divide-gray-700">
           {data.map((customer) => (
             <ClientCard customer={customer} key={customer._id} />
           ))}
