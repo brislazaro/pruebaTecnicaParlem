@@ -8,3 +8,7 @@ export type Customer = {
   familyName1: string;
   phone: string;
 };
+
+export type CustomerProps = {
+  customer: Customer;
+};
