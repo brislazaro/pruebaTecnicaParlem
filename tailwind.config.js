@@ -9,6 +9,11 @@ export default {
       colors: {
         darkgray: "#1f1f1f",
         yellow: "#fec23e",
+        lightgray: "E6E6E6",
+      },
+      boxShadow: {
+        bottom:
+          "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
       },
     },
   },
