@@ -9,7 +9,7 @@ export default {
       colors: {
         darkgray: "#1f1f1f",
         yellow: "#fec23e",
-        lightgray: "E6E6E6",
+        lightgray: "#E6E6E6",
       },
       boxShadow: {
         bottom:
