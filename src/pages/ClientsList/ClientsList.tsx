@@ -1,4 +1,4 @@
-import ClientsCard from "./ClientsCard";
+import ClientCard from "./ClientCard";
 import useClientsList from "./useClientsList";
 
 const ClientsList = () => {
@@ -20,7 +20,7 @@ const ClientsList = () => {
 
       <ul className="divide-y divide-gray-700 ">
         {data.map((customer) => (
-          <ClientsCard customer={customer} key={customer._id} />
+          <ClientCard customer={customer} key={customer._id} />
         ))}
       </ul>
     </div>
