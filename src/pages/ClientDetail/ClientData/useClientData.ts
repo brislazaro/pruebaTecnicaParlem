@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
-import { Customer } from "../../types";
-import { getClients } from "../../api/getClients";
+import { Customer } from "../../../types";
+import { getClients } from "../../../api/getClients";
 
-const useClientsList = () => {
+const useClientData = (id: string) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [data, setData] = useState<Customer[]>([]);
+  const [data, setData] = useState<Customer>();
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
         const clients = await getClients();
 
-        setData(clients);
+        const selectedClient = clients.find(
+          (client) => client.customerId === id
+        );
+
+        setData(selectedClient);
       } catch (error) {
         setIsError(true);
       } finally {
@@ -21,7 +25,7 @@ const useClientsList = () => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   return {
     isLoading,
@@ -29,5 +33,4 @@ const useClientsList = () => {
     data,
   };
 };
-
-export default useClientsList;
+export default useClientData;
