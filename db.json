@@ -141,6 +141,16 @@
       "numeracioTerminal": 696696969,
       "soldAt": "2020-08-01 18:30:27",
       "customerId": "11111"
+    },
+    {
+      "_id": 1111113,
+      "productName": "MOBIL 500GB",
+      "mbSpeed": null,
+      "gbData": 500,
+      "productTypeName": "4G",
+      "numeracioTerminal": 696696969,
+      "soldAt": "2020-08-01 18:30:27",
+      "customerId": "11112"
     }
   ]
 }
