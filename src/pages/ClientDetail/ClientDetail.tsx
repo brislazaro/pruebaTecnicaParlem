@@ -20,12 +20,18 @@ function ClientDetail() {
         {isLoading && !isError && <Skeleton />}
 
         {!isLoading && isError && (
-          <div className="p-4 bg-yellow text-lg rounded-md">
+          <div className="p-4 bg-yellow text-lg rounded-md mb-4">
             ❌ Error al cargar el cliente
           </div>
         )}
 
-        {!isLoading && !isError && (
+        {!isLoading && !isError && !data && (
+          <div className="p-4 bg-yellow text-lg rounded-md mb-4">
+            ❌ No se ha encontrado un cliente con el id {id}
+          </div>
+        )}
+
+        {!isLoading && !isError && data && (
           <div
             className="py-4 flex flex-col gap-4 text-white"
             data-testid="clientCard"
