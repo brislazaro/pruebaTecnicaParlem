@@ -1,15 +1,8 @@
-import { useParams } from "react-router-dom";
-import useClientData from "./ClientData/useClientData";
-import Skeleton from "../ClientsList/Skeleton/Skeleton";
-import useClientProducts from "./useClientProducts";
 import { NavLink } from "react-router-dom";
+import ClientData from "./ClientData/ClientData";
+import ProductsList from "./ProductsList/ProductsList";
 
 function ClientDetail() {
-  const { id = "" } = useParams();
-  const { isLoading, isError, data } = useClientData(id);
-  const { isLoadingProducts, isErrorProducts, dataProducts } =
-    useClientProducts(id);
-
   return (
     <>
       <div className="w-full p-4 border rounded-lg shadow md:p-8 bg-darkgray border-gray-700">
@@ -17,71 +10,14 @@ function ClientDetail() {
           Detalle del Cliente
         </h1>
 
-        {isLoading && !isError && <Skeleton />}
-
-        {!isLoading && isError && (
-          <div className="p-4 bg-yellow text-lg rounded-md mb-4">
-            ❌ Error al cargar el cliente
-          </div>
-        )}
-
-        {!isLoading && !isError && !data && (
-          <div className="p-4 bg-yellow text-lg rounded-md mb-4">
-            ❌ No se ha encontrado un cliente con el id {id}
-          </div>
-        )}
-
-        {!isLoading && !isError && data && (
-          <div
-            className="py-4 flex flex-col gap-4 text-white"
-            data-testid="clientCard"
-          >
-            <p className="text-base font-semibold ">
-              {data?.givenName} {data?.familyName1}
-            </p>
-            <div className="flex flex-col gap-2">
-              <p className="text-sm truncate text-gray-400 ">
-                <span className="capitalize">{data?.docType}</span>:{" "}
-                {data?.docNum}
-              </p>
-              <p className="text-sm truncate text-gray-400">
-                Email: {data?.email}
-              </p>
-              <p className="text-sm truncate text-gray-400">
-                Telefono: {data?.phone}
-              </p>
-            </div>
-          </div>
-        )}
+        <ClientData />
 
         <h2 className="text-xl font-bold leading-none text-white mb-4">
           Productos:
         </h2>
 
-        {isLoadingProducts && !isErrorProducts && <Skeleton />}
+        <ProductsList />
 
-        {!isLoadingProducts && isErrorProducts && (
-          <div className="p-4 bg-yellow text-lg rounded-md">
-            ❌ Error al cargar el cliente
-          </div>
-        )}
-
-        {!isLoadingProducts && !isErrorProducts && (
-          <ul className="text-white flex flex-col gap-8">
-            {dataProducts && dataProducts.length > 0 ? (
-              dataProducts.map((product) => (
-                <li key={product._id}>
-                  <p>Producto: {product.productName}</p>
-                  <p>Velocidad: {product.mbSpeed}</p>
-                  <p>gbData: {product.gbData}</p>
-                  <p>Adquirido: {product.soldAt}</p>
-                </li>
-              ))
-            ) : (
-              <p className="text-yellow-500">Sin productos contratados</p>
-            )}
-          </ul>
-        )}
         <NavLink
           to="/"
           className="flex justify-center mt-10 bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 ease-in-out"
