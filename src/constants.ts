@@ -1,1 +1,1 @@
-export const API_URL = "https://parlem-json-server-cors.vercel.app/";
+export const API_URL = "https://parlem-json-server-cors.vercel.app";
