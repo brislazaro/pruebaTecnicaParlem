@@ -8,16 +8,18 @@ import { Customer } from "../../../types";
 vi.mock("./useClientData.ts");
 
 describe("Given a ClientsData component", () => {
-  test("Then should render the skeleton component", () => {
-    (useClientData as Mock).mockReturnValue({
-      isLoading: true,
-      isError: false,
-      data: [],
+  describe("When isLoading is true", () => {
+    test("Then should render the skeleton component", () => {
+      (useClientData as Mock).mockReturnValue({
+        isLoading: true,
+        isError: false,
+        data: [],
+      });
+
+      renderComponentFactory(<ClientData />);
+
+      expect(screen.getByTestId("clientsSkeleton")).toBeInTheDocument();
     });
-
-    renderComponentFactory(<ClientData />);
-
-    expect(screen.getByTestId("clientsSkeleton")).toBeInTheDocument();
   });
 
   describe("When isError is true ", () => {
