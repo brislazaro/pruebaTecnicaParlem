@@ -19,7 +19,7 @@ const ClientData: FC = () => {
 
       {!isLoading && !isError && !data && (
         <div className="p-4 bg-yellow text-lg rounded-md mb-4">
-          ❌ No se ha encontrado un cliente con el id {id}
+          ❌ No se ha encontrado el cliente
         </div>
       )}
 

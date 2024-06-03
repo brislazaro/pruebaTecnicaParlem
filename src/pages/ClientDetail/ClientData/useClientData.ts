@@ -5,7 +5,7 @@ import { getClients } from "../../../api/getClients";
 const useClientData = (id: string) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [data, setData] = useState<Customer>();
+  const [data, setData] = useState<Customer | undefined>();
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
