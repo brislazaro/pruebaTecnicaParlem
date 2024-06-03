@@ -62,14 +62,18 @@ function ClientDetail() {
 
         {!isLoadingProducts && !isErrorProducts && (
           <ul className="text-white flex flex-col gap-8">
-            {dataProducts?.map((product) => (
-              <li>
-                <p>Producto: {product.productName}</p>
-                <p>Velocidad: {product.mbSpeed}</p>
-                <p>gbData: {product.gbData}</p>
-                <p>Adquirido: {product.soldAt}</p>
-              </li>
-            ))}
+            {dataProducts && dataProducts.length > 0 ? (
+              dataProducts.map((product) => (
+                <li key={product._id}>
+                  <p>Producto: {product.productName}</p>
+                  <p>Velocidad: {product.mbSpeed}</p>
+                  <p>gbData: {product.gbData}</p>
+                  <p>Adquirido: {product.soldAt}</p>
+                </li>
+              ))
+            ) : (
+              <p className="text-yellow-500">Sin productos contratados</p>
+            )}
           </ul>
         )}
         <NavLink
