@@ -1,5 +1,5 @@
 import { FC } from "react";
-import logoParlem from "./parlem-logo.png";
+import logoParlem from "../../assets/parlem-logo.png";
 
 const Header: FC = () => {
   return (
