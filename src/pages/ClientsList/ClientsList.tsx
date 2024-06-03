@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ClientCard from "./ClientCard/ClientCard";
 import Skeleton from "./Skeleton/Skeleton";
 import useClientsList from "./useClientsList";
@@ -7,21 +7,16 @@ const ClientsList = () => {
   const { isLoading, isError, data } = useClientsList();
 
   const [inputValue, setInputValue] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
 
-  useEffect(() => {
-    if (data) {
-      setFilteredData(data);
-    }
-  }, [data]);
+  const filteredData = inputValue
+    ? data.filter((item) =>
+        item.givenName.toLowerCase().includes(inputValue.toLowerCase())
+      )
+    : data;
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setInputValue(value);
-    const filtered = data.filter((item) =>
-      item.givenName.toLowerCase().includes(value.toLowerCase())
-    );
-    setFilteredData(filtered);
   };
 
   return (
