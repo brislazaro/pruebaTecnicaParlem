@@ -2,6 +2,20 @@
 
 Este proyecto es un proyecto hecho con React + TypeScript creado con Vite.
 
+Para arrancar el proyecto
+
+```
+npm install
+
+npm run dev
+```
+
+Para ejecutar los tests:
+
+```
+npm run test
+```
+
 ## Tecnologias utilizadas
 
 - Tailwind para gestionar los estilos
